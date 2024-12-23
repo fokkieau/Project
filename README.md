@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
-/../main/static/images/dota2-icon.png
+![alt text](https://imgur.com/a/1V15lKx)
 
 ### Обратная связь:
 [Mail](https://mail.ru/) - uteevaa205@mail.ru
