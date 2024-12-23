@@ -1,0 +1,139 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+    color: #333;
+}
+
+@font-face {
+    font-family: 'Prosto One';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../static/fonts/ProstoOne-Regular.woff2') format('woff2'),
+        url('../static/fonts/ProstoOne-Regular.woff')   format('woff');
+}
+@font-face {
+    font-family: 'Reaver';
+    src: url('../static/fonts/Reaver-Regular.woff2') format('woff2'),
+        url('../static/fonts/Reaver-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Reaver';
+    src: url('../static/fonts/Reaver-Bold.woff2') format('woff2'),
+        url('../static/fonts/Reaver-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+#navbar {
+    background-color: #202020;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+#site-title {
+    font-family: 'Reaver';
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    margin-left: 15px;
+}
+
+#main-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#search-container {
+    max-width: 400px;
+    width: 100%;
+}
+
+#match-id {
+    width: 100%;
+    max-width: 378px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #202020;
+    color: white;
+}
+
+/* Зеленый фон для первых 5 строк */
+tbody tr {
+    transition: background-color 0.2s ease-in-out; /* Добавляем анимацию для фона */
+}
+
+tbody tr:nth-child(-n+5) {
+    background-color: #d4edda;
+    border: 1.5px solid rgb(42, 42, 42); /* для отладки */
+}
+
+/* Красный фон для следующих 5 строк */
+tbody tr:nth-child(n+6):nth-child(-n+10) {
+    background-color: #f8d7da;
+    border: 1.5px solid rgb(42, 42, 42); /* для отладки */
+}
+
+tbody tr:nth-child(-n+5):hover {
+    background-color: #f1f1f1;
+}
+
+/* Красный фон для следующих 5 строк */
+tbody tr:nth-child(n+6):nth-child(-n+10):hover {
+    background-color: #f1f1f1;
+}
+/* tbody tr:hover {
+    background-color: #ddd;
+} */

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dota 2 Match Stats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="navbar">
+        <img id="logo" src="{{ url_for('static', filename='images/dota2-icon.png') }}" alt="Dota 2 Icon" onclick="window.location.href='/'">
+        <h1 id="site-title">Dota 2 Match Stats</h1>
+    </div>
+
+    <div id="main-screen">
+        <form id="search-container" method="POST">
+            <input id="match-id" name="match_id" type="text" placeholder="Enter Match ID" required>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if match_id %}
+            <h2>Match ID: {{ match_id }}</h2>
+        {% endif %}
+
+        {% if match_data %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Player Name</th>
+                        <th>Hero</th>
+                        <th>Kills</th>
+                        <th>Deaths</th>
+                        <th>Assists</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for player in match_data.players %}
+                        <tr>
+                            <td>{{ player.personaname or "Anonymous" }}</td>
+                            <td>{{ player.hero_name }}</td>
+                            <td>{{ player.kills }}</td>
+                            <td>{{ player.deaths }}</td>
+                            <td>{{ player.assists }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+</body>
+</html>
