@@ -8,7 +8,8 @@
 </head>
 <body>
     <div id="navbar">
-        <img id="logo" src="{{ url_for('static', filename='images/dota2-icon.png') }}" alt="Dota 2 Icon" onclick="window.location.href='/'">
+        <img id="logo" src="{{ url_for('static', filename='images/dota2-icon.png') }}" alt="Dota 2 Icon"
+            onclick="window.location.href='/'">
         <h1 id="site-title">Dota 2 Match Stats</h1>
     </div>
 
@@ -19,32 +20,41 @@
         </form>
 
         {% if match_id %}
-            <h2>Match ID: {{ match_id }}</h2>
+        <h2>Match ID: {{ match_id }}</h2>
         {% endif %}
 
         {% if match_data %}
-            <table>
-                <thead>
-                    <tr>
-                        <th>Player Name</th>
-                        <th>Hero</th>
-                        <th>Kills</th>
-                        <th>Deaths</th>
-                        <th>Assists</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for player in match_data.players %}
-                        <tr>
-                            <td>{{ player.personaname or "Anonymous" }}</td>
-                            <td>{{ player.hero_name }}</td>
-                            <td>{{ player.kills }}</td>
-                            <td>{{ player.deaths }}</td>
-                            <td>{{ player.assists }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <h3 class="{{ 'radiant' if match_data.radiant_win else 'dire' }}">
+            Winner: {{ "Radiant" if match_data.radiant_win else "Dire" }}
+        </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Player Name</th>
+                    <th>Hero</th>
+                    <th>Kills</th>
+                    <th>Deaths</th>
+                    <th>Assists</th>
+                    <th>Net Worth</th> <!-- Новая колонка -->
+                    <th>Last Hits</th> <!-- Новая колонка -->
+                    <th>Denies</th> <!-- Новая колонка -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in match_data.players %}
+                <tr>
+                    <td>{{ player.personaname or "Anonymous" }}</td>
+                    <td>{{ player.hero_name }}</td>
+                    <td>{{ player.kills }}</td>
+                    <td>{{ player.deaths }}</td>
+                    <td>{{ player.assists }}</td>
+                    <td>{{ player.net_worth }}</td> <!-- Новая колонка -->
+                    <td>{{ player.last_hits }}</td> <!-- Новая колонка -->
+                    <td>{{ player.denies }}</td> <!-- Новая колонка -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         {% endif %}
     </div>
 </body>

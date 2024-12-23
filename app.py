@@ -24,6 +24,9 @@ def get_match_data(match_id):
         for player in match_data['players']:
             hero_id = player.get('hero_id')
             player['hero_name'] = hero_names.get(hero_id, 'Unknown Hero')  # Подставляем имя героя
+            player['net_worth'] = player.get('total_gold', 0)  # Net Worth
+            player['last_hits'] = player.get('last_hits', 0)  # Last Hits
+            player['denies'] = player.get('denies', 0)  # Denies
         return match_data
     else:
         return None

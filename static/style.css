@@ -78,6 +78,14 @@ body {
     border-radius: 5px;
 }
 
+.radiant {
+    color: rgb(53, 158, 53);
+}
+
+.dire {
+    color: rgb(175, 51, 51);
+}
+
 button {
     width: 100%;
     padding: 10px;
