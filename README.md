@@ -1,6 +1,6 @@
 # Project - Dota 2 Match Stats
 
-
+![alt text](https://github.com/fokkieau/Project/blob/main/static/images/dota2-icon.png)
 
 # Цель проекта:
 >Создать веб-приложение, позволяющее пользователю вводить ID матча из игры Dota 2 и получать подробную статистику игроков в этом матче. Приложение должно быть простым, удобным и визуально приятным для пользователя, с четким разделением информации о командах Radiant и Dire.
@@ -22,9 +22,10 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
-![alt text](https://imgur.com/a/1V15lKx)
 
 ### Обратная связь:
 [Mail](https://mail.ru/) - uteevaa205@mail.ru
+
 [Gmail](https://gmail.com/) - uteevaa205@gmail.com
+
 [Telegram](http://web.telegram.org/) - [@fokkie](https://t.me/fokkie)
