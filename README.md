@@ -13,6 +13,7 @@
 ### Установка необходимых компонентов:
 ```
 pip install flask
+pip install requests
 pip install -r requirements.txt
 ```
 
