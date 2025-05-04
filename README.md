@@ -23,10 +23,3 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
-
-### Обратная связь:
-[Mail](https://mail.ru/) - 
-
-[Gmail](https://gmail.com/) - 
-
-[Telegram](http://web.telegram.org/) - [@fokkie](https://t.me/fokkie)
